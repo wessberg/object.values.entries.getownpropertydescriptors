@@ -1,0 +1,22 @@
+{
+  "name": "object.values.entries.getownpropertydescriptors",
+  "version": "1.0.0",
+  "description": "Polyfills for Object.values, Object.entries and Object.getOwnPropertyDescriptors",
+  "main": "polyfills.js",
+  "scripts": {
+		"build": "npm run build:dev && npm run build:min",
+    "build:dev": "rollup -c rollup.config.js -o polyfill.js",
+		"build:min": "NODE_ENV=production rollup -c rollup.config.js -o polyfill.min.js"
+  },
+  "author": "Frederik Wessberg",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-plugin-transform-flow-strip-types": ">=6.8.0",
+    "babel-preset-es2015": "^6.16.0",
+    "babel-preset-stage-1": "^6.16.0",
+    "rollup": "^0.36.3",
+    "rollup-plugin-babel": "^2.6.1",
+    "rollup-plugin-uglify": "^1.0.1",
+    "uglify-js": "github:mishoo/UglifyJS2#harmony"
+  }
+}

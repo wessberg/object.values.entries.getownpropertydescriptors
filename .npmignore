@@ -1,0 +1,6 @@
+src/
+rollup.config.js
+.gitignore
+.npmignore
+.flowconfig
+.babelrc

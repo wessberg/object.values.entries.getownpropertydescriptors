@@ -1,11 +1,11 @@
 {
   "name": "object.values.entries.getownpropertydescriptors",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Polyfills for Object.values, Object.entries and Object.getOwnPropertyDescriptors",
   "main": "polyfill.min.js",
   "scripts": {
 		"build": "npm run build:dev && npm run build:min",
-    "build:dev": "rollup -c rollup.config.js -o polyfill.js",
+    "build:dev": "NODE_ENV=development rollup -c rollup.config.js -o polyfill.js",
 		"build:min": "NODE_ENV=production rollup -c rollup.config.js -o polyfill.min.js"
   },
   "author": "Frederik Wessberg",

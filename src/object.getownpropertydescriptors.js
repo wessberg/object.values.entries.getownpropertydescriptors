@@ -3,8 +3,11 @@
 
 'use strict';
 
-if (typeof Reflect === 'undefined') {
-  global.Reflect = {
+var root;
+try { root = self; } catch (e) { try { root = global; } catch (e) { rot = window; } }
+
+if (typeof root.Reflect === 'undefined') {
+  root.Reflect = {
     defineProperty: Object.defineProperty,
     getOwnPropertyDescriptor: Object.getOwnPropertyDescriptor,
     ownKeys: function ownKeys(genericObject) {

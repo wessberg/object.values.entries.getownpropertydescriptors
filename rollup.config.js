@@ -28,7 +28,7 @@ export default {
 			cascade: true,
 			collapse_vars: true
 		},
-		screwIE8: true,
+		screwIE8: false,
 		comments: false,
 		mangle: true
 	}, minify)

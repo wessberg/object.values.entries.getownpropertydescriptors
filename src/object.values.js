@@ -1,5 +1,20 @@
-// From tc39's own polyfill example.
+// From tc39's own polyfill example with a few additions.
 // https://github.com/tc39/proposal-object-values-entries/blob/master/polyfill.js
+
+var root;
+try { root = self; } catch (e) { try { root = global; } catch (e) { rot = window; } }
+
+if (typeof root.Reflect === 'undefined') {
+  root.Reflect = {
+    defineProperty: Object.defineProperty,
+    getOwnPropertyDescriptor: Object.getOwnPropertyDescriptor,
+    ownKeys: function ownKeys(genericObject) {
+      let gOPS = Object.getOwnPropertySymbols || function () { return []; };
+      return Object.getOwnPropertyNames(genericObject)
+              .concat(gOPS(genericObject));
+    }
+  };
+}
 
 const reduce = Function.bind.call(Function.call, Array.prototype.reduce);
 const isEnumerable = Function.bind.call(Function.call, Object.prototype.propertyIsEnumerable);
